@@ -63,7 +63,7 @@ app.listen(port, () => {
 echo "Creating config.env file (MongoDB)"
 sudo echo "
 MONGODB_LOCAL=mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.2
-PORT=5000" > config.env
+PORT=4000" > config.env
 
 echo "Creating conn.js file (MongoDB Connection)"
 sudo mkdir db
@@ -183,6 +183,6 @@ recordRoutes.route(\"/:id\").delete((req, response) => {
  });
 });
  
-module.exports = recordRoutes;" > routes/Employee.route.js
+module.exports = recordRoutes;" > routes/employees.js
 
 sudo node server.js
