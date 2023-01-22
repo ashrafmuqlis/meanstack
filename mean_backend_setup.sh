@@ -17,7 +17,7 @@ const bodyParser = require('body-parser')
 mongoose
   .connect('mongodb://localhost:27017/mydatabase')
   .then((x) => {
-    console.log(\`Connected to Mongo! Database name: \\"${x.connections[0].name}\\"\`)
+    console.log(``)
   })
   .catch((err) => {
     console.error('Error connecting to mongo', err.reason)
@@ -145,4 +145,5 @@ employeeRoute.route('/delete/:id').delete((req, res, next) => {
 module.exports = employeeRoute;" > routes/employee.route.js
 
 echo "Start Angular Backend Environment"
+sudo sed -i 's/console.log()/console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)/' MEAN/backend/server.js
 sudo node server.js
