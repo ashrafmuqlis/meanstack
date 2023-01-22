@@ -54,4 +54,97 @@ code and message
 
 sudo sed -i 's/index.js/server.js/' package.json
 
+echo "Create DB models"
+sudo mkdir models
+sudo echo "
+const mongoose = require(\'mongoose\');
+const Schema = mongoose.Schema;
+// Define collection and schema
+let Employee = new Schema({
+   name: {
+      type: String
+   },
+   email: {
+      type: String
+   },
+   designation: {
+      type: String
+   },
+   phoneNumber: {
+      type: Number
+   }
+}, {
+   collection: \'employees\'
+})
+module.exports = mongoose.model(\'Employee\', Employee)" > models/Employee.js
+
+echo "Create API routes"
+sudo mkdir routes
+sudo echo "
+const express = require(\'express\');
+const app = express();
+const employeeRoute = express.Router();
+// Employee model
+let Employee = require(\'../models/Employee\');
+// Add Employee
+employeeRoute.route(\'/create\').post((req, res, next) => {
+  Employee.create(req.body, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+});
+// Get All Employees
+employeeRoute.route(\'/\').get((req, res) => {
+  Employee.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+// Get single employee
+employeeRoute.route(\'/read/:id\').get((req, res) => {
+  Employee.findById(req.params.id, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
+// Update employee
+employeeRoute.route(\'/update/:id\').put((req, res, next) => {
+  Employee.findByIdAndUpdate(req.params.id, {
+    $set: req.body
+  }, (error, data) => {
+    if (error) {
+      return next(error);
+      console.log(error)
+    } else {
+      res.json(data)
+      console.log(\'Data updated successfully\')
+    }
+  })
+})
+// Delete employee
+employeeRoute.route(\'/delete/:id\').delete((req, res, next) => {
+  Employee.findOneAndRemove(req.params.id, (error, data) => {
+    if (error) {
+      return next(error);
+    } else {
+      res.status(200).json({
+        msg: data
+      })
+    }
+  })
+})
+module.exports = employeeRoute;" > routes/employee.route.js
+
+echo "Start Angular Backend Environment"
+sudo node server.js
 
