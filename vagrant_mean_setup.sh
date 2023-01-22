@@ -39,3 +39,5 @@ sudo ng g c components/employee-create
 sudo ng g c components/employee-edit
 sudo ng g c components/employee-list
 
+echo "Starting MEAN Frontend"
+sudo ng serve
