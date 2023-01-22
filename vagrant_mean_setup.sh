@@ -31,5 +31,6 @@ sudo apt-get install -y nodejs
 
 echo "Setting up Angular MEAN Frontend"
 sudo ng new MEAN
+cd MEAN
 sudo npm install bootstrap
 
