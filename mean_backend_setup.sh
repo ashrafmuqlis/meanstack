@@ -145,5 +145,5 @@ employeeRoute.route('/delete/:id').delete((req, res, next) => {
 module.exports = employeeRoute;" > routes/employee.route.js
 
 echo "Start Angular Backend Environment"
-sudo sed -i 's/console.log()/console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)/' MEAN/backend/server.js
+sudo sed -i 's/console.log()/console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)/' server.js
 sudo node server.js
