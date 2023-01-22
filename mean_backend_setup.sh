@@ -119,7 +119,7 @@ employeeRoute.route('/read/:id').get((req, res) => {
 // Update employee
 employeeRoute.route('/update/:id').put((req, res, next) => {
   Employee.findByIdAndUpdate(req.params.id, {
-    $set: req.body
+    \$set: req.body
   }, (error, data) => {
     if (error) {
       return next(error);
