@@ -52,4 +52,6 @@ app.use(function (err, req, res, next) {
 code and message
 })" > server.js
 
+sudo sed -i 's/index.js/server.js/' package.json
+
 
