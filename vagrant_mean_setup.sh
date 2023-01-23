@@ -35,9 +35,6 @@ sudo ng new MEAN
 cd MEAN
 sudo npm install bootstrap
 sudo sed 's/"src\/styles.css"/"node_modules\/bootstrap\/dist\/css\/bootstrap.min.css\",\n              "src\/styles.css"/' angular.json
-sudo ng g c components/employee-create
-sudo ng g c components/employee-edit
-sudo ng g c components/employee-list
 
 echo "Starting MEAN Frontend"
 sudo ng serve
