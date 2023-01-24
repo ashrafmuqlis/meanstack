@@ -80,7 +80,7 @@ db.mongoose
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-});
+});" > server.js
 
 echo "Create routes/tutorial.routes.js file"
 sudo mkdir routes
