@@ -308,3 +308,5 @@ module.exports = {
   url: 'mongodb://localhost:27017/meancrud'
 }; > config/db.config.js
 
+echo "Starting Angular MEAN Backend Server"
+sudo node server.js
