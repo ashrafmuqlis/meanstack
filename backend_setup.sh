@@ -82,6 +82,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });" > server.js
 
+sudo sed -i 's/console.log()/console.log(`Server is running on port ${PORT}.`)/' server.js
+
 echo "Create routes/tutorial.routes.js file"
 sudo mkdir routes
 sudo echo "
