@@ -31,7 +31,14 @@ app.use(
     extended: false,
   }),
 )
-app.use(cors())
+
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions));
+
+// app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/MEAN')))
 app.use('/', express.static(path.join(__dirname, 'dist/MEAN')))
 app.use('/api', employeeRoute)
