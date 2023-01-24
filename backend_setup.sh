@@ -159,7 +159,7 @@ module.exports = mongoose => {
 echo "Create controllers/tutorial.controller.js file"
 sudo mkdir controllers
 sudo echo "
-const db = require("../models");
+const db = require('../models');
 const Tutorial = db.tutorials;
 
 // Create and Save a new Tutorial
@@ -194,7 +194,7 @@ exports.create = (req, res) => {
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
   const title = req.query.title;
-  var condition = title ? { title: { $regex: new RegExp(title), $options: 'i' } } : {};
+  var condition = title ? { title: { \$regex: new RegExp(title), \$options: 'i' } } : {};
 
   Tutorial.find(condition)
     .then(data => {
@@ -239,7 +239,7 @@ exports.update = (req, res) => {
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`
+          message: \`Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!\`
         });
       } else res.send({ message: 'Tutorial was updated successfully.' });
     })
@@ -258,7 +258,7 @@ exports.delete = (req, res) => {
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+          message: \`Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!\`
         });
       } else {
         res.send({
@@ -278,7 +278,7 @@ exports.deleteAll = (req, res) => {
   Tutorial.deleteMany({})
     .then(data => {
       res.send({
-        message: `${data.deletedCount} Tutorials were deleted successfully!`
+        message: \`${data.deletedCount} Tutorials were deleted successfully!\`
       });
     })
     .catch(err => {
