@@ -239,7 +239,7 @@ exports.update = (req, res) => {
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: \`Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!\`
+          message: 'Cannot update Tutorial with id=\${id}. Maybe Tutorial was not found!'
         });
       } else res.send({ message: 'Tutorial was updated successfully.' });
     })
@@ -258,7 +258,7 @@ exports.delete = (req, res) => {
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: \`Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!\`
+          message: 'Cannot delete Tutorial with id=\${id}. Maybe Tutorial was not found!'
         });
       } else {
         res.send({
@@ -278,7 +278,7 @@ exports.deleteAll = (req, res) => {
   Tutorial.deleteMany({})
     .then(data => {
       res.send({
-        message: \`${data.deletedCount} Tutorials were deleted successfully!\`
+        message: '\${data.deletedCount} Tutorials were deleted successfully!'
       });
     })
     .catch(err => {
