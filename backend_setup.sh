@@ -115,7 +115,7 @@ module.exports = app => {
 
   app.use('/api/tutorials', router);
 
-}; > routes/tutorial.routes.js
+};" > routes/tutorial.routes.js
 
 echo "Create models/index.js file"
 sudo mkdir models
@@ -130,7 +130,7 @@ db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.tutorials = require('./tutorial.model.js')(mongoose);
 
-module.exports = db; > models/index.js
+module.exports = db;" > models/index.js
 
 echo "Create models/tutorial.model.js file"
 sudo echo "
@@ -152,7 +152,7 @@ module.exports = mongoose => {
 
   const Tutorial = mongoose.model('tutorial', schema);
   return Tutorial;
-}; > models/tutorial.model.js
+};" > models/tutorial.model.js
 
 echo "Create controllers/tutorial.controller.js file"
 sudo mkdir controllers
@@ -299,14 +299,14 @@ exports.findAllPublished = (req, res) => {
           err.message || 'Some error occurred while retrieving tutorials.'
       });
     });
-}; > controllers/tutorial.controller.js
+};" > controllers/tutorial.controller.js
 
 echo "Create config/db.config.js file"
 sudo mkdir config
 sudo echo "
 module.exports = {
   url: 'mongodb://localhost:27017/meancrud'
-}; > config/db.config.js
+};" > config/db.config.js
 
 echo "Starting Angular MEAN Backend Server"
 sudo node server.js
