@@ -32,6 +32,7 @@ sudo apt-get install -y nodejs
 echo "Setting up Angular MEAN Frontend"
 sudo npm install bootstrap @angular/cli -g
 sudo ng new MEAN
+cd MEAN/src/app/
 sudo ng g class models/tutorial --type=model
 sudo ng g c components/add-tutorial
 sudo ng g c components/tutorial-details
