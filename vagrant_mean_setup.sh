@@ -30,9 +30,11 @@ sudo curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 
 echo "Setting up Angular MEAN Frontend"
-sudo npm install @angular/cli bootstrap -g
+sudo npm install @angular/cli -g
 sudo ng new MEAN
-cd MEAN/src/app/
+cd MEAN/ || pwd
+sudo npm install bootstrap
+cd src/app/ || pwd
 sudo ng g class models/tutorial --type=model
 sudo ng g c components/add-tutorial
 sudo ng g c components/tutorial-details
