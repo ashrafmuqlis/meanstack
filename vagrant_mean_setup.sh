@@ -39,6 +39,7 @@ sudo ng g c components/add-tutorial
 sudo ng g c components/tutorial-details
 sudo ng g c components/tutorials-list
 sudo ng g s services/tutorial
+cd ~
 
 echo "Loading Application Files - app.module.ts"
 sudo echo "
