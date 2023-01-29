@@ -56,10 +56,10 @@ const routes: Routes = [
 export class AppRoutingModule { }" > app-routing.module.ts
 cd /home/vagrant/
 
-echo "Loading Application Files - style.css"
+echo "Loading Application Files - styles.css"
 cd MEAN/src/
 sudo echo "
-@import \"bootstrap/dist/css/bootstrap.css\";" > style.css
+@import \"bootstrap/dist/css/bootstrap.css\";" > styles.css
 cd /home/vagrant/
 
 echo "Loading Application Files - app.component.html"
