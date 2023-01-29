@@ -78,7 +78,7 @@ sudo echo "
     <router-outlet></router-outlet>
   </div>
 </div>" > app.component.html
-sudo mv app.component.html > MEAN/src/app/app.component.html
+sudo mv app.component.html MEAN/src/app/app.component.html
 
 echo "Loading Application Files - tutorial.model.ts"
 sudo echo "
