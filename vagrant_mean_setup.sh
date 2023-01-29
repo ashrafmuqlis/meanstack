@@ -40,6 +40,7 @@ sudo ng g c components/tutorials-list
 sudo ng g s services/tutorial
 
 echo "Loading Application Files - app.module.ts"
+cd MEAN/src/app/
 sudo echo "
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -68,9 +69,11 @@ import { TutorialsListComponent } from './components/tutorials-list/tutorials-li
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }" > MEAN/src/app/app.module.ts
+export class AppModule { }" > app.module.ts
+cd ~
 
 echo "Loading Application Files - app-routing.module.ts"
+cd MEAN/src/app/
 sudo echo "
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -89,13 +92,17 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }" > MEAN/src/app/app-routing.module.ts
+export class AppRoutingModule { }" > app-routing.module.ts
+cd ~
 
 echo "Loading Application Files - style.css"
+cd MEAN/src/
 sudo echo "
-@import \"bootstrap/dist/css/bootstrap.css\";" > MEAN/src/style.css
+@import \"bootstrap/dist/css/bootstrap.css\";" > style.css
+cd ~
 
 echo "Loading Application Files - app.component.html"
+cd MEAN/src/app/
 sudo echo "
 <div>
   <nav class=\"navbar navbar-expand navbar-dark bg-dark\">
@@ -113,18 +120,22 @@ sudo echo "
   <div class=\"container mt-3\">
     <router-outlet></router-outlet>
   </div>
-</div>" > MEAN/src/app/app.component.html
+</div>" > app.component.html
+cd ~
 
 echo "Loading Application Files - tutorial.model.ts"
+cd MEAN/src/app/models/
 sudo echo "
 export class Tutorial {
   id?: any;
   title?: string;
   description?: string;
   published?: boolean;
-}" > MEAN/src/app/models/tutorial.model.ts
+}" > tutorial.model.ts
+cd ~
 
 echo "Loading Application Files - tutorial.service.ts"
+cd MEAN/src/app/services/
 sudo echo "
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -167,9 +178,11 @@ export class TutorialService {
   findByTitle(title: any): Observable<Tutorial[]> {
     return this.http.get<Tutorial[]>(`\${baseUrl}?title=\${title}`);
   }
-}" > MEAN/src/app/services/tutorial.service.ts
+}" > tutorial.service.ts
+cd ~
 
 echo "Loading Application Files - tutorial-details.component.ts"
+cd MEAN/src/app/components/tutorial-details/
 sudo echo "
 import { Component, Input, OnInit } from '@angular/core';
 import { TutorialService } from 'src/app/services/tutorial.service';
@@ -260,9 +273,11 @@ export class TutorialDetailsComponent implements OnInit {
       });
   }
 
-}" > MEAN/src/app/components/tutorial-details/tutorial-details.component.ts
+}" > tutorial-details.component.ts
+cd ~
 
 echo "Loading Application Files - tutorial-details.component.html"
+cd MEAN/src/app/components/tutorial-details/
 sudo echo "
 <div *ngIf=\"viewMode; else editable\">
   <div *ngIf=\"currentTutorial.id\">
@@ -357,16 +372,20 @@ sudo echo "
     <br />
     <p>Cannot access this Tutorial...</p>
   </div>
-</ng-template>" > MEAN/src/app/components/tutorial-details/tutorial-details.component.html
+</ng-template>" > tutorial-details.component.html
+cd ~
 
 echo "Loading Application Files - tutorial-details.component.css"
+cd MEAN/src/app/components/tutorial-details/
 sudo echo "
 .edit-form {
   max-width: 400px;
   margin: auto;
-}" > MEAN/src/app/components/tutorial-details/tutorial-details.component.css
+}" > tutorial-details.component.css
+cd ~
 
 echo "Loading Application Files - tutorials-list.component.ts"
+cd MEAN/src/app/components/tutorials-list/
 sudo echo "
 import { Component, OnInit } from '@angular/core';
 import { Tutorial } from 'src/app/models/tutorial.model';
@@ -437,9 +456,11 @@ export class TutorialsListComponent implements OnInit {
       });
   }
 
-}" > MEAN/src/app/components/tutorials-list/tutorials-list.component.ts
+}" > tutorials-list.component.ts
+cd ~
 
 echo "Loading Application Files - tutorials-list.component.html"
+cd MEAN/src/app/components/tutorials-list/
 sudo echo "
 <div class=\"list row\">
   <div class=\"col-md-8\">
@@ -484,17 +505,21 @@ sudo echo "
       [currentTutorial]=\"currentTutorial\"
     ></app-tutorial-details>
   </div>
-</div>" > MEAN/src/app/components/tutorials-list/tutorials-list.component.html
+</div>" > tutorials-list.component.html
+cd ~
 
 echo "Loading Application Files - tutorials-list.component.css"
+cd MEAN/src/app/components/tutorials-list/
 sudo echo "
 .list {
   text-align: left;
   max-width: 750px;
   margin: auto;
-}" > MEAN/src/app/components/tutorials-list/tutorials-list.component.css
+}" > tutorials-list.component.css
+cd ~
 
 echo "Loading Application Files - add-tutorial.component.ts"
+cd MEAN/src/app/components/add-tutorial/
 sudo echo "
 import { Component, OnInit } from '@angular/core';
 import { Tutorial } from 'src/app/models/tutorial.model';
@@ -544,9 +569,11 @@ export class AddTutorialComponent implements OnInit {
     };
   }
 
-}" > MEAN/src/app/components/add-tutorial/add-tutorial.component.ts
+}" > add-tutorial.component.ts
+cd ~
 
 echo "Loading Application Files - add-tutorial.component.html"
+cd MEAN/src/app/components/add-tutorial/
 sudo echo "
 <div>
   <div class=\"submit-form\">
@@ -582,13 +609,17 @@ sudo echo "
       <button class=\"btn btn-success\" (click)=\"newTutorial()\">Add</button>
     </div>
   </div>
-</div>" > MEAN/src/app/components/add-tutorial/add-tutorial.component.html
+</div>" > add-tutorial.component.html
+cd ~
 
 echo "Loading Application Files - add-tutorial.component.css"
+cd MEAN/src/app/components/add-tutorial/
 sudo echo "
 .submit-form {
   max-width: 400px;
   margin: auto;
-}" > MEAN/src/app/components/add-tutorial/add-tutorial.component.css
+}" > add-tutorial.component.css
+cd ~
 
+echo "Starting MEAN Front End Server"
 sudo ng MEAN/src/ serve
