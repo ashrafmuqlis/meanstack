@@ -111,7 +111,7 @@ export class TutorialService {
   }
 
   get(id: any): Observable<Tutorial> {
-    return this.http.get<Tutorial>(`\${baseUrl}/\${id}`);
+    return this.http.get<Tutorial>('\${baseUrl}/\${id}');
   }
 
   create(data: any): Observable<any> {
@@ -119,11 +119,11 @@ export class TutorialService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`\${baseUrl}/\${id}`, data);
+    return this.http.put('\${baseUrl}/\${id}', data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`\${baseUrl}/\${id}`);
+    return this.http.delete('\${baseUrl}/\${id}');
   }
 
   deleteAll(): Observable<any> {
@@ -131,7 +131,7 @@ export class TutorialService {
   }
 
   findByTitle(title: any): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(`\${baseUrl}?title=\${title}`);
+    return this.http.get<Tutorial[]>('\${baseUrl}?title=\${title}');
   }
 }" > tutorial.service.ts
 sudo mv tutorial.service.ts MEAN/src/app/services/tutorial.service.ts
