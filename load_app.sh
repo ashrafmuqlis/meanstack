@@ -460,7 +460,6 @@ sudo echo "
 sudo mv tutorials-list.component.html MEAN/src/app/components/tutorials-list/tutorials-list.component.html
 
 echo "Loading Application Files - tutorials-list.component.css"
-cd /home/vagrant/MEAN/src/app/components/tutorials-list/ || pwd
 sudo echo "
 .list {
   text-align: left;
@@ -520,7 +519,7 @@ export class AddTutorialComponent implements OnInit {
   }
 
 }" > add-tutorial.component.ts
-sudo mv add-tutorial.component.ts MEAN/src/app/components/tutorials-list/add-tutorial.component.ts
+sudo mv add-tutorial.component.ts MEAN/src/app/components/add-tutorial/add-tutorial.component.ts
 
 echo "Loading Application Files - add-tutorial.component.html"
 sudo echo "
