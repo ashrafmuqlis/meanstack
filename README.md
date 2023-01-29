@@ -1,5 +1,5 @@
 # meanstack
-Notes on MEAN (MongoDB, Express, Angular and Node JS stack. How to's, etc.) Development Framework
+Notes on MEAN (MongoDB, Express, Angular and Node JS stack. How to's, etc.) Stack Development Framework
 
 ## Setup Application Scaffolding (MongoDB, Node JS, Angular JS) Terminal #1
 ```
