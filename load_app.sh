@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Loading Application Files - app.module.ts"
-cd ~/MEAN/src/app/ || pwd
+cd /home/vagrant/MEAN/src/app/ || pwd
 sudo echo "
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,10 +31,9 @@ import { TutorialsListComponent } from './components/tutorials-list/tutorials-li
   bootstrap: [AppComponent]
 })
 export class AppModule { }" > app.module.ts
-cd /home/vagrant/
 
 echo "Loading Application Files - app-routing.module.ts"
-cd ~/MEAN/src/app/ || pwd
+cd /home/vagrant/src/app/ || pwd
 sudo echo "
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -54,16 +53,14 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }" > app-routing.module.ts
-cd /home/vagrant/
 
 echo "Loading Application Files - styles.css"
-cd ~/MEAN/src/ || pwd
+cd /home/vagrant/MEAN/src/ || pwd
 sudo echo "
 @import \"bootstrap/dist/css/bootstrap.css\";" > styles.css
-cd /home/vagrant/
 
 echo "Loading Application Files - app.component.html"
-cd ~/MEAN/src/app/ || pwd
+cd /home/vagrant/MEAN/src/app/ || pwd
 sudo echo "
 <div>
   <nav class=\"navbar navbar-expand navbar-dark bg-dark\">
@@ -82,10 +79,9 @@ sudo echo "
     <router-outlet></router-outlet>
   </div>
 </div>" > app.component.html
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorial.model.ts"
-cd ~/MEAN/src/app/models/ || pwd
+cd /home/vagrant/MEAN/src/app/models/ || pwd
 sudo echo "
 export class Tutorial {
   id?: any;
@@ -93,10 +89,9 @@ export class Tutorial {
   description?: string;
   published?: boolean;
 }" > tutorial.model.ts
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorial.service.ts"
-cd ~/MEAN/src/app/services/ || pwd
+cd /home/vagrant/MEAN/src/app/services/ || pwd
 sudo echo "
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -140,10 +135,9 @@ export class TutorialService {
     return this.http.get<Tutorial[]>(`\${baseUrl}?title=\${title}`);
   }
 }" > tutorial.service.ts
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorial-details.component.ts"
-cd ~/MEAN/src/app/components/tutorial-details/ || pwd
+cd /home/vagrant/MEAN/src/app/components/tutorial-details/ || pwd
 sudo echo "
 import { Component, Input, OnInit } from '@angular/core';
 import { TutorialService } from 'src/app/services/tutorial.service';
@@ -235,10 +229,9 @@ export class TutorialDetailsComponent implements OnInit {
   }
 
 }" > tutorial-details.component.ts
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorial-details.component.html"
-cd ~/MEAN/src/app/components/tutorial-details/ || pwd
+cd /home/vagrant/MEAN/src/app/components/tutorial-details/ || pwd
 sudo echo "
 <div *ngIf=\"viewMode; else editable\">
   <div *ngIf=\"currentTutorial.id\">
@@ -334,19 +327,17 @@ sudo echo "
     <p>Cannot access this Tutorial...</p>
   </div>
 </ng-template>" > tutorial-details.component.html
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorial-details.component.css"
-cd ~/MEAN/src/app/components/tutorial-details/ || pwd
+cd /home/vagrant/MEAN/src/app/components/tutorial-details/ || pwd
 sudo echo "
 .edit-form {
   max-width: 400px;
   margin: auto;
 }" > tutorial-details.component.css
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorials-list.component.ts"
-cd ~/MEAN/src/app/components/tutorials-list/ || pwd
+cd /home/vagrant/MEAN/src/app/components/tutorials-list/ || pwd
 sudo echo "
 import { Component, OnInit } from '@angular/core';
 import { Tutorial } from 'src/app/models/tutorial.model';
@@ -418,10 +409,9 @@ export class TutorialsListComponent implements OnInit {
   }
 
 }" > tutorials-list.component.ts
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorials-list.component.html"
-cd ~/MEAN/src/app/components/tutorials-list/ || pwd
+cd /home/vagrant/MEAN/src/app/components/tutorials-list/ || pwd
 sudo echo "
 <div class=\"list row\">
   <div class=\"col-md-8\">
@@ -467,20 +457,18 @@ sudo echo "
     ></app-tutorial-details>
   </div>
 </div>" > tutorials-list.component.html
-cd /home/vagrant/
 
 echo "Loading Application Files - tutorials-list.component.css"
-cd ~/MEAN/src/app/components/tutorials-list/ || pwd
+cd /home/vagrant/MEAN/src/app/components/tutorials-list/ || pwd
 sudo echo "
 .list {
   text-align: left;
   max-width: 750px;
   margin: auto;
 }" > tutorials-list.component.css
-cd /home/vagrant/
 
 echo "Loading Application Files - add-tutorial.component.ts"
-cd ~/MEAN/src/app/components/add-tutorial/ || pwd
+cd /home/vagrant/MEAN/src/app/components/add-tutorial/ || pwd
 sudo echo "
 import { Component, OnInit } from '@angular/core';
 import { Tutorial } from 'src/app/models/tutorial.model';
@@ -531,10 +519,9 @@ export class AddTutorialComponent implements OnInit {
   }
 
 }" > add-tutorial.component.ts
-cd /home/vagrant/
 
 echo "Loading Application Files - add-tutorial.component.html"
-cd ~/MEAN/src/app/components/add-tutorial/ || pwd
+cd /home/vagrant/MEAN/src/app/components/add-tutorial/ || pwd
 sudo echo "
 <div>
   <div class=\"submit-form\">
@@ -571,16 +558,14 @@ sudo echo "
     </div>
   </div>
 </div>" > add-tutorial.component.html
-cd /home/vagrant/
 
 echo "Loading Application Files - add-tutorial.component.css"
-cd ~/MEAN/src/app/components/add-tutorial/ || pwd
+cd /home/vagrant/MEAN/src/app/components/add-tutorial/ || pwd
 sudo echo "
 .submit-form {
   max-width: 400px;
   margin: auto;
 }" > add-tutorial.component.css
-cd /home/vagrant/
 
 echo "Starting MEAN Front End Server"
 sudo ng MEAN/src/ serve
