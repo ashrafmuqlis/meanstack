@@ -1,7 +1,7 @@
 # meanstack
 Notes on MEAN (MongoDB, Express, Angular and Node JS stack. How to's, etc.) Development Framework
 
-## Setup Application Scaffolding (MongoDB, Node JS, Angular JS)
+## Setup Application Scaffolding (MongoDB, Node JS, Angular JS) Terminal #1
 ```
 #!/bin/bash
 
@@ -30,7 +30,7 @@ sudo ng g c components/tutorial-details
 sudo ng g c components/tutorials-list
 sudo ng g s services/tutorial
 ```
-## Load Application Files
+## Load Application Files Terminal #2
 ```
 #!/bin/bash
 
@@ -606,7 +606,7 @@ cd MEAN/src
 sudo ng serve
 ```
 
-## Setup Backend (Express JS and MongoDB Configuration)
+## Setup Backend (Express JS and MongoDB Configuration) Terminal #3
 ```
 #!/bin/bash
 
@@ -923,3 +923,6 @@ module.exports = {
 echo "Starting Angular MEAN Backend Server"
 sudo node server.js
 ```
+
+## Test using Curl
+Use Terminal #1 to test `curl http://localhost:4200`
