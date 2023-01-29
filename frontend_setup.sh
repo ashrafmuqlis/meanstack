@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 echo "Installing MongoDB 6"
 sudo wget -q -O - https://www.mongodb.org/static/pgp/server-6.0.pub | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/mongodb.gpg     
