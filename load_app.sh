@@ -569,5 +569,5 @@ sudo echo "
 sudo mv add-tutorial.component.css MEAN/src/app/components/add-tutorial/add-tutorial.component.css
 
 echo "Starting MEAN Front End Server"
-cd MEAN/src
+cd MEAN/src/
 sudo ng serve
