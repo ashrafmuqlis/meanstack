@@ -56,7 +56,7 @@ sudo mv app-routing.module.ts MEAN/src/app/app-routing.module.ts
 
 echo "Loading Application Files - styles.css"
 sudo echo "
-@import \"bootstrap/dist/css/bootstrap.css\";" > styles.css
+@import \"~bootstrap/dist/css/bootstrap.css\";" > styles.css
 sudo mv styles.css MEAN/src/styles.css
 
 echo "Loading Application Files - app.component.html"
