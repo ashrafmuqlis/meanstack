@@ -411,7 +411,6 @@ export class TutorialsListComponent implements OnInit {
 sudo mv tutorials-list.component.ts MEAN/src/app/components/tutorials-list/tutorials-list.component.ts
 
 echo "Loading Application Files - tutorials-list.component.html"
-cd /home/vagrant/MEAN/src/app/components/tutorials-list/ || pwd
 sudo echo "
 <div class=\"list row\">
   <div class=\"col-md-8\">
@@ -569,5 +568,5 @@ sudo echo "
 sudo mv add-tutorial.component.css MEAN/src/app/components/add-tutorial/add-tutorial.component.css
 
 echo "Starting MEAN Front End Server"
-cd MEAN/src/
+cd MEAN/src
 sudo ng serve
