@@ -31,7 +31,7 @@ import { TutorialsListComponent } from './components/tutorials-list/tutorials-li
   bootstrap: [AppComponent]
 })
 export class AppModule { }" > app.module.ts
-cd ~
+cd ~/
 
 echo "Loading Application Files - app-routing.module.ts"
 cd MEAN/src/app/
@@ -54,13 +54,13 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }" > app-routing.module.ts
-cd ~
+cd ~/
 
 echo "Loading Application Files - style.css"
 cd MEAN/src/
 sudo echo "
 @import \"bootstrap/dist/css/bootstrap.css\";" > style.css
-cd ~
+cd ~/
 
 echo "Loading Application Files - app.component.html"
 cd MEAN/src/app/
@@ -82,7 +82,7 @@ sudo echo "
     <router-outlet></router-outlet>
   </div>
 </div>" > app.component.html
-cd ~
+cd ~/
 
 echo "Loading Application Files - tutorial.model.ts"
 cd MEAN/src/app/models/
@@ -93,7 +93,7 @@ export class Tutorial {
   description?: string;
   published?: boolean;
 }" > tutorial.model.ts
-cd ~
+cd ~/
 
 echo "Loading Application Files - tutorial.service.ts"
 cd MEAN/src/app/services/
@@ -140,7 +140,7 @@ export class TutorialService {
     return this.http.get<Tutorial[]>(`\${baseUrl}?title=\${title}`);
   }
 }" > tutorial.service.ts
-cd ~
+cd ~/
 
 echo "Loading Application Files - tutorial-details.component.ts"
 cd MEAN/src/app/components/tutorial-details/
@@ -235,7 +235,7 @@ export class TutorialDetailsComponent implements OnInit {
   }
 
 }" > tutorial-details.component.ts
-cd ~
+cd ~/
 
 echo "Loading Application Files - tutorial-details.component.html"
 cd MEAN/src/app/components/tutorial-details/
@@ -343,7 +343,7 @@ sudo echo "
   max-width: 400px;
   margin: auto;
 }" > tutorial-details.component.css
-cd ~
+cd ~/
 
 echo "Loading Application Files - tutorials-list.component.ts"
 cd MEAN/src/app/components/tutorials-list/
@@ -418,7 +418,7 @@ export class TutorialsListComponent implements OnInit {
   }
 
 }" > tutorials-list.component.ts
-cd ~
+cd ~/
 
 echo "Loading Application Files - tutorials-list.component.html"
 cd MEAN/src/app/components/tutorials-list/
@@ -467,7 +467,7 @@ sudo echo "
     ></app-tutorial-details>
   </div>
 </div>" > tutorials-list.component.html
-cd ~
+cd ~/
 
 echo "Loading Application Files - tutorials-list.component.css"
 cd MEAN/src/app/components/tutorials-list/
@@ -477,7 +477,7 @@ sudo echo "
   max-width: 750px;
   margin: auto;
 }" > tutorials-list.component.css
-cd ~
+cd ~/
 
 echo "Loading Application Files - add-tutorial.component.ts"
 cd MEAN/src/app/components/add-tutorial/
@@ -531,7 +531,7 @@ export class AddTutorialComponent implements OnInit {
   }
 
 }" > add-tutorial.component.ts
-cd ~
+cd ~/
 
 echo "Loading Application Files - add-tutorial.component.html"
 cd MEAN/src/app/components/add-tutorial/
@@ -571,7 +571,7 @@ sudo echo "
     </div>
   </div>
 </div>" > add-tutorial.component.html
-cd ~
+cd ~/
 
 echo "Loading Application Files - add-tutorial.component.css"
 cd MEAN/src/app/components/add-tutorial/
@@ -580,7 +580,7 @@ sudo echo "
   max-width: 400px;
   margin: auto;
 }" > add-tutorial.component.css
-cd ~
+cd ~/
 
 echo "Starting MEAN Front End Server"
 sudo ng MEAN/src/ serve
